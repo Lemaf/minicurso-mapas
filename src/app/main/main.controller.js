@@ -19,11 +19,7 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    var myIcon = L.icon({
-      iconUrl: 'https://image.flaticon.com/icons/svg/33/33622.svg',
-      iconSize: [38, 95]
-    });
-
+    var myIcon = L.divIcon({className: 'my-div-icon'});
     L.marker([51.505, -0.09], {icon: myIcon}).addTo(map);
 
   }
