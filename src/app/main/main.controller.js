@@ -19,9 +19,12 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+    var myIcon = L.icon({
+      iconUrl: 'https://image.flaticon.com/icons/svg/33/33622.svg',
+      iconSize: [38, 95]
+    });
+
+    L.marker([51.505, -0.09], {icon: myIcon}).addTo(map);
 
   }
 
