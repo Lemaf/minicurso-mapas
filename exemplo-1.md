@@ -1,14 +1,37 @@
-(function() {
-  'use strict';
+### Adicionando leaflet ao projeto
 
-  angular
-    .module('minicursoMapas')
-    .controller('MainController', MainController);
+ 1. Fazer a instalação via bower: https://bower.io/search/
 
-  /** @ngInject */
-  function MainController($timeout, $window) {
+ 2. bower install leaflet --save
 
-    // var vm = this;
+ 3. bower.json
+
+```json
+    "leaflet": {
+        "main": [
+        "dist/leaflet.js",
+        "dist/leaflet.css"
+        ]
+    }
+```
+
+### Configurando leaflet ao projeto
+
+1. index.css
+
+```css
+    #map { height: 400px; width: 100%; }
+```
+
+2. main.html
+
+```html
+    <div id="map"></div>
+ ```
+
+3. main.controller.js
+
+```javascript
 
     // Caso tenha algum analisador de código
     var L = $window.L;
@@ -22,7 +45,4 @@
     L.marker([51.5, -0.09]).addTo(map)
         .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
         .openPopup();
-
-  }
-
-})();
+```
