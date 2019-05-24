@@ -19,9 +19,13 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+    map.addControl(new L.Control.Fullscreen({
+      position: 'topright',
+      title: {
+        'false': 'Ativar modo de tela cheia',
+        'true': 'Desativar modo de tela cheia'
+      }
+    }));
 
   }
 

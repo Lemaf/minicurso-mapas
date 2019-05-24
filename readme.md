@@ -1,48 +1,30 @@
-### Adicionando leaflet ao projeto
+### Adicionando um marcador customizado ao mapa
 
- 1. Fazer a instalação via bower: https://bower.io/search/
+1. Instalando plugin
+    - Documentações
+        - https://github.com/Leaflet/Leaflet.fullscreen
+        - https://www.npmjs.com/package/leaflet-fullscreen
+    - Instalação
+        - bower install leaflet-fullscreen --save
 
- 2. bower install leaflet --save
-
- 3. bower.json
-
-```json
-    "leaflet": {
-        "main": [
-        "dist/leaflet.js",
-        "dist/leaflet.css"
-        ]
-    }
+2. index.html
+    - head
+```javascript
+    <link rel="stylesheet" media="screen" href="../bower_components/Leaflet.fullscreen/dist/leaflet.fullscreen.css">
 ```
-
-### Configurando leaflet ao projeto
-
-1. index.css
-
-```css
-    #map { height: 400px; width: 100%; }
+    - body
+```javascript
+    <script src="../bower_components/Leaflet.fullscreen/dist/Leaflet.fullscreen.min.js" type="text/javascript" charset="utf-8"></script>
 ```
-
-2. main.html
-
-```html
-    <div id="map"></div>
- ```
-
-3. main.controller.js
+2. main.controller.js
 
 ```javascript
 
-    // Caso tenha algum analisador de código
-    var L = $window.L;
-
-    var map = L.map('map').setView([51.505, -0.09], 13);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+    map.addControl(new L.Control.Fullscreen({
+      position: 'topright',
+      title: {
+        'false': 'Ativar modo de tela cheia',
+        'true': 'Desativar modo de tela cheia'
+      }
+    }));
 ```
