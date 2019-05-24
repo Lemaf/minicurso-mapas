@@ -19,10 +19,12 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+    var popup = L.popup()
+      .setLatLng([51.505, -0.09])
+      .setContent('Olá, eu sou um exemplo de popup')
+      .openOn(map);
 
+    popup.openOn(map);
   }
 
 })();
