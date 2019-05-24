@@ -49,5 +49,10 @@
       ]
     };
 
-    L.geoJSON(data).addTo(map);
+    L.geoJSON(data, {
+      style: {
+        fillColor: '#000',
+        color: '#000'
+      }
+    }).addTo(map);
 ```
