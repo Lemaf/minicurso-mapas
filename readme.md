@@ -14,7 +14,7 @@
     // body
     <script src="../bower_components/Leaflet.fullscreen/dist/Leaflet.fullscreen.min.js" type="text/javascript" charset="utf-8"></script>
 ```
-2. main.controller.js
+3. main.controller.js
 
 ```javascript
 
