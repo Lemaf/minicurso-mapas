@@ -13,14 +13,19 @@
     // Caso tenha algum analisador de código
     var L = $window.L;
 
-    var map = L.map('map').setView([51.505, -0.09], 13);
+    var map = L.map('map', {
+      minZoom: 6,
+      maxZoom: 15,
+      // dragging: false
+    }).setView([-3.46956, -52.82227], 6);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    var myIcon = L.divIcon({className: 'my-div-icon'});
-    L.marker([51.505, -0.09], {icon: myIcon}).addTo(map);
+    L.tileLayer('http://car.semas.pa.gov.br/site/mosaicos/rapid-eye/{z}/{x}/{y}', {
+      tms: true
+    }).addTo(map);
 
   }
 

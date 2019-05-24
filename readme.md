@@ -4,34 +4,7 @@
 
 ```javascript
 
-    var myIcon = L.divIcon({className: 'my-div-icon'});
-    L.marker([51.505, -0.09], {icon: myIcon}).addTo(map);
-```
-
-1. index.css
-
-```css
-
-  .my-div-icon {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    margin-left: 115px;
-
-    border-radius: 50%;
-    border: 10px solid #000;
-    width: 8px;
-    height: 8px;
-  }
-
-  .my-div-icon::after {
-    position: absolute;
-    content: '';
-    width: 0px;
-    height: 0px;
-    bottom: -29px;
-    left: -10px;
-    border: 10px solid transparent;
-    border-top: 17px solid #000;
-  }
+    L.tileLayer('http://car.semas.pa.gov.br/site/mosaicos/rapid-eye/{z}/{x}/{y}', {
+      tms: true
+    }).addTo(map);
 ```
