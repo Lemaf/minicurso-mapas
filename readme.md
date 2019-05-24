@@ -8,12 +8,10 @@
         - bower install leaflet-fullscreen --save
 
 2. index.html
-    - head
 ```javascript
+    // head
     <link rel="stylesheet" media="screen" href="../bower_components/Leaflet.fullscreen/dist/leaflet.fullscreen.css">
-```
-    - body
-```javascript
+    // body
     <script src="../bower_components/Leaflet.fullscreen/dist/Leaflet.fullscreen.min.js" type="text/javascript" charset="utf-8"></script>
 ```
 2. main.controller.js
