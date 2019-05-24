@@ -1,4 +1,4 @@
-### Adicionando um DivIcon ao mapa
+### Adicionando um geoJSON ao mapa
 
 1. main.controller.js
 
