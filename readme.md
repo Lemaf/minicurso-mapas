@@ -1,4 +1,4 @@
-### Adicionando um marcador customizado ao mapa
+### Adicionando um tooltip customizado ao mapa
 
 1. main.controller.js
 
