@@ -1,48 +1,17 @@
-### Adicionando leaflet ao projeto
+### Adicionando um marcador customizado ao mapa
 
- 1. Fazer a instalação via bower: https://bower.io/search/
-
- 2. bower install leaflet --save
-
- 3. bower.json
-
-```json
-    "leaflet": {
-        "main": [
-        "dist/leaflet.js",
-        "dist/leaflet.css"
-        ]
-    }
-```
-
-### Configurando leaflet ao projeto
-
-1. index.css
-
-```css
-    #map { height: 400px; width: 100%; }
-```
-
-2. main.html
-
-```html
-    <div id="map"></div>
- ```
-
-3. main.controller.js
+1. main.controller.js
 
 ```javascript
 
-    // Caso tenha algum analisador de código
-    var L = $window.L;
+    var myIcon = L.icon({
+      iconUrl: 'https://image.flaticon.com/icons/svg/33/33622.svg',
+      iconSize: [38, 95]
+    });
 
-    var map = L.map('map').setView([51.505, -0.09], 13);
+    var marker = L.marker([52.5, -0.09]).bindPopup('Sim, o homem de ferro morre. <img src="https://i.ytimg.com/vi/Ix-k-MKHXWo/hqdefault.jpg" style="width: 200px; heigth: 200px;">');
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    L.setOptions(marker, {icon: myIcon})
 
-    L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+    marker.addTo(map);
 ```
