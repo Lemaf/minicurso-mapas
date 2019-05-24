@@ -19,10 +19,20 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+    var marker = L.marker([51.5, -0.09]).addTo(map);
 
+    marker.bindTooltip("Tooltip direto no marcador", {sticky: true}).openTooltip();
+
+    var tooltip = L.tooltip({
+        direction: 'center',
+        permanent: true,
+        interactive: true,
+        noWrap: true,
+        opacity: 0.9
+    });
+    tooltip.setContent("Tooltip no mapa");
+    tooltip.setLatLng(new L.LatLng(51.505, -0.15));
+    tooltip.addTo(map);
   }
 
 })();
