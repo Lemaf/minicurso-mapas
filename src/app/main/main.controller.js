@@ -13,7 +13,7 @@
     // Caso tenha algum analisador de código
     var L = $window.L;
 
-    var map = L.map('map').setView([51.505, -0.09], 13);
+    var map = L.map('map').setView([-3.6567033, -64.0763379], 3);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -38,8 +38,8 @@
       shadowAnchor: [22, 94]
     });
 
-    var markerRat = L.marker([52.5, -0.09]).bindPopup('<img src="../../assets/images/rat.png" style="width: 20px; heigth: 20px;">');
-    var markerIronman = L.marker([52.7, -0.09]).bindPopup('Sim, o homem de ferro morre. <img src="https://i.ytimg.com/vi/Ix-k-MKHXWo/hqdefault.jpg" style="width: 200px; heigth: 200px;">');
+    var markerRat = L.marker([-3.6567033, -64.0763379]).bindPopup('<img src="../../assets/images/rat.png" style="width: 20px; heigth: 20px;">');
+    var markerIronman = L.marker([-3.6567033, -64.0763379]).bindPopup('Sim, o homem de ferro morre. <img src="https://i.ytimg.com/vi/Ix-k-MKHXWo/hqdefault.jpg" style="width: 200px; heigth: 200px;">');
 
     L.setOptions(markerRat, {icon: iconRat})
     L.setOptions(markerIronman, {icon: iconIronman})
