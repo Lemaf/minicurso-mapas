@@ -6,12 +6,14 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, $window) {
+  function MainController($window) {
 
-    // var vm = this;
+    var vm = this;
+    vm.gerarImg = gerarImg;
 
-    // Caso tenha algum analisador de código
     var L = $window.L;
+
+    var leafletImage = $window.leafletImage;
 
     var map = L.map('map').setView([-3.6567033, -64.0763379], 3);
 
@@ -19,9 +21,19 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([-3.6567033, -64.0763379]).addTo(map)
-        .bindPopup('Eae Pessoal...')
-        .openPopup();
+    function gerarImg() {
+
+      leafletImage(map, function(err, canvas) {
+        var img = $window.document.createElement('img');
+        var dimensions = map.getSize();
+        img.width = dimensions.x;
+        img.height = dimensions.y;
+        var url = canvas.toDataURL();
+        var newTab = $window.open();
+        newTab.document.body.innerHTML = '<img src=' + url  +' width="760px" height="500px">';
+      });
+
+    }
 
   }
 
