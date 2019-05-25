@@ -6,18 +6,15 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, $window) {
+  function MainController($window) {
 
-    // var vm = this;
-
-    // Caso tenha algum analisador de código
     var L = $window.L;
 
     var map = L.map('map', {
       minZoom: 6,
-      maxZoom: 15,
+      maxZoom: 15
       // dragging: false
-    }).setView([-3.46956, -52.82227], 6);
+    }).setView([-3.46956, -52.82227], 4);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
