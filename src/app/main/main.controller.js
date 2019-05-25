@@ -13,14 +13,14 @@
     // Caso tenha algum analisador de código
     var L = $window.L;
 
-    var map = L.map('map').setView([51.505, -0.09], 13);
+    var map = L.map('map').setView([-3.6567033, -64.0763379], 3);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     var popup = L.popup()
-      .setLatLng([51.505, -0.09])
+      .setLatLng([-3.6567033, -64.0763379])
       .setContent('Olá, eu sou um exemplo de popup')
       .openOn(map);
 
