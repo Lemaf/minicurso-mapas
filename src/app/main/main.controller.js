@@ -13,7 +13,7 @@
     // Caso tenha algum analisador de código
     var L = $window.L;
 
-    var map = L.map('map').setView([-3.46956, -52.82227], 6);
+    var map = L.map('map').setView([-3.6567033, -64.0763379], 3);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
