@@ -1,48 +1,19 @@
-### Adicionando leaflet ao projeto
+### Adicionando Coordinates ao projeto
 
- 1. Fazer a instalação via bower: https://bower.io/search/
+ 1. bower install Leaflet.Coordinates --save
 
- 2. bower install leaflet --save
-
- 3. bower.json
-
-```json
-    "leaflet": {
-        "main": [
-        "dist/leaflet.js",
-        "dist/leaflet.css"
-        ]
-    }
-```
-
-### Configurando leaflet ao projeto
-
-1. index.css
-
-```css
-    #map { height: 400px; width: 100%; }
-```
-
-2. main.html
-
-```html
-    <div id="map"></div>
- ```
-
-3. main.controller.js
+ 2. main.controller.js
 
 ```javascript
 
-    // Caso tenha algum analisador de código
-    var L = $window.L;
-
-    var map = L.map('map').setView([51.505, -0.09], 13);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    L.control.coordinates({
+      position:"bottomleft",
+      decimalSeperator:".",
+      useDMS:false,
+      useLatLngOrder: true,
+      markerType: L.marker,
+      markerProps: {},
+      labelFormatterLng: function(lng) {return "Latitude: " + lng.toFixed(4);},
+      labelFormatterLat: function(lat) {return "Latitude: " + lat.toFixed(4);}
     }).addTo(map);
-
-    L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
 ```
