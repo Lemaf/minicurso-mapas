@@ -1,48 +1,22 @@
-### Adicionando leaflet ao projeto
+﻿﻿### Adicionando um marcador customizado ao mapa
 
- 1. Fazer a instalação via bower: https://bower.io/search/
+1. Instalando plugin
+    - Documentações
+        - https://github.com/Leaflet/Leaflet.draw
+        - https://www.npmjs.com/package/leaflet-draw
+    - Instalação
+        - bower install leaflet.draw --save
 
- 2. bower install leaflet --save
-
- 3. bower.json
-
-```json
-    "leaflet": {
-        "main": [
-        "dist/leaflet.js",
-        "dist/leaflet.css"
-        ]
-    }
+2. index.html
+```javascript
+    // 
+    <link rel="stylesheet" media="screen" href="../bower_components/leaflet-draw/dist/leaflet.draw.css">
+    // body
+    <script src="../bower_components/leaflet/dist/leaflet.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../bower_components/leaflet-draw/dist/leaflet.draw.js" type="text/javascript" charset="utf-8"></script>
 ```
-
-### Configurando leaflet ao projeto
-
-1. index.css
-
-```css
-    #map { height: 400px; width: 100%; }
-```
-
-2. main.html
-
-```html
-    <div id="map"></div>
- ```
-
 3. main.controller.js
 
 ```javascript
-
-    // Caso tenha algum analisador de código
-    var L = $window.L;
-
-    var map = L.map('map').setView([51.505, -0.09], 13);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+    - 
 ```
