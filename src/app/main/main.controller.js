@@ -8,12 +8,9 @@
   /** @ngInject */
   function MainController($timeout, $window) {
 
-    // var vm = this;
-
-    // Caso tenha algum analisador de código
     var L = $window.L;
 
-    var map = L.map('map').setView([51.505, -0.09], 13);
+    var map = L.map('map').setView([-3.6567033, -64.0763379], 3);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -26,7 +23,7 @@
     var ponto1 = L.point(10, 10);
     var ponto2 = L.point(40, 60);
     var ponto3 = L.point(20, 30);
-    var bounds = L.bounds([ponto1, ponto2, ponto3]);
+    L.bounds([ponto1, ponto2, ponto3]);
 
     var latLng1 = L.latLng(10, 10);
     var latLng2 = L.latLng(40, 60);
