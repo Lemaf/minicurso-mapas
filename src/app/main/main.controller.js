@@ -24,7 +24,7 @@
         .openPopup();
 
     L.Control.Watermark = L.Control.extend({
-      onAdd: function(map) {
+      onAdd: function() {
         var img = L.DomUtil.create('img');
 
         img.src = '../../assets/images/logo-lemaf.svg';
@@ -33,7 +33,7 @@
         return img;
       },
 
-      onRemove: function(map) {
+      onRemove: function() {
         // Nothing to do here
       }
     });
