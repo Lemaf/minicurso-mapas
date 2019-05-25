@@ -5,7 +5,7 @@
 ```javascript
 
     var myIcon = L.divIcon({className: 'my-div-icon'});
-    L.marker([51.505, -0.09], {icon: myIcon}).addTo(map);
+    L.marker([-3.6567033, -64.0763379], {icon: myIcon}).addTo(map);
 ```
 
 1. index.css
