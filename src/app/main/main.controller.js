@@ -1,4 +1,4 @@
-(function() {
+﻿(function() {
   'use strict';
 
   angular
@@ -23,6 +23,7 @@
         .bindPopup('Eae Pessoal...')
         .openPopup();
 
+    L.tileLayer.provider('Stamen.Watercolor').addTo(map);
   }
 
 })();
